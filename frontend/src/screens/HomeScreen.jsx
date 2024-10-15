@@ -5,17 +5,18 @@ import Product from '../components/Product'
 
 function HomeScreen() {
   return (
-    <div>
+    <>
       <h1>All Products</h1>
       <Row>
         {products.map((productData) => (
-          <Col sm={12} md={6} lg={4} xl={3}>
+          // key is to retrieve product._id in link tag in Product.jsx
+          <Col key={productData._id} sm={12} md={6} lg={4} xl={3}>
             <Product product={productData}/>
           </Col>
         ))}
       </Row>
 
-    </div>
+    </>
   )
 }
 
